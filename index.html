@@ -5,282 +5,554 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./assets/LogoSinFondo.png">
-
-    <title>PIMN - Programa Institucional de Movilidad Nocturna</title>
-
+    <title>PIMN – Programa Institucional de Movilidad Nocturna</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Sora:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav>
+
+    <!-- NAV -->
+    <nav id="navbar">
         <div class="logo-container">
             <img src="./assets/PIMN.png" alt="Logo PIMN">
             <span>PIMN</span>
         </div>
-        <ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú">&#9776;</button>
+        <ul id="navMenu">
             <li><a href="#problema">Problema</a></li>
             <li><a href="#solucion">Solución</a></li>
+            <li><a href="#analisis">Análisis</a></li>
             <li><a href="#viabilidad">Viabilidad</a></li>
+            <li><a href="#mvp">MVP</a></li>
             <li><a href="#equipo">Equipo</a></li>
         </ul>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="stars" id="stars"></div>
         <div class="hero-content reveal">
-            <h1>Programa Institucional de Movilidad Nocturna</h1>
-            <p>
-                Una estrategia orientada a mejorar la seguridad,
-                movilidad y permanencia académica de los estudiantes
-                nocturnos de la Universidad Católica Luis Amigó.
-            </p>
+            <div class="hero-badge">Universidad Católica Luis Amigó · Medellín, 2026</div>
+            <h1>Programa Institucional de <em>Movilidad Nocturna</em></h1>
+            <p>Una estrategia social para garantizar seguridad, accesibilidad y permanencia académica a los estudiantes
+                nocturnos.</p>
             <div class="buttons">
                 <a href="#solucion" class="btn btn-primary">Ver propuesta</a>
                 <a href="#equipo" class="btn btn-secondary">Equipo</a>
             </div>
         </div>
+        <div class="hero-scroll-hint">
+            <span>Explorar</span>
+            <div class="scroll-arrow"></div>
+        </div>
     </section>
 
-    <section id="objetivo">
-
-        <h2 class="section-title reveal">Objetivo</h2>
-
-        <p class="section-subtitle reveal">
-            Diseñar un sistema institucional que mejore la seguridad,
-            accesibilidad y coordinación del transporte nocturno para
-            estudiantes universitarios.
-        </p>
-
-    </section>
-
+    <!-- PROBLEMA -->
     <section id="problema">
-        <h2 class="section-title reveal">Problemática</h2>
-        <p class="section-subtitle reveal">
-            Los estudiantes nocturnos enfrentan dificultades de movilidad,
-            inseguridad y altos costos de transporte al finalizar sus clases.
-        </p>
-        <div class="grid grid-3">
-            <div class="card reveal">
-                <h3>Seguridad</h3>
-                <p>
-                    Alta percepción de inseguridad durante
-                    desplazamientos nocturnos y tiempos de espera.
-                </p>
+        <div class="container">
+            <span class="section-tag reveal">Diagnóstico</span>
+            <h2 class="section-title reveal">Problemática</h2>
+            <p class="section-subtitle reveal">Los estudiantes de la jornada nocturna enfrentan tres dimensiones de
+                dificultad interrelacionadas que afectan su bienestar, economía y permanencia académica.</p>
+
+            <div class="grid grid-3">
+                <div class="card card-problem reveal">
+                    <h3>Seguridad</h3>
+                    <p>Alta percepción de riesgo durante la espera y desplazamiento nocturno en zonas de paraderos y
+                        estaciones.</p>
+                </div>
+                <div class="card card-problem reveal">
+                    <h3>Impacto económico</h3>
+                    <p>Incremento del gasto personal al recurrir a taxis o plataformas privadas ante la ausencia de
+                        opciones seguras.</p>
+                </div>
+                <div class="card card-problem reveal">
+                    <h3>Impacto académico</h3>
+                    <p>Deserción de materias nocturnas y retiro anticipado de clases para garantizar el regreso a casa.
+                    </p>
+                </div>
             </div>
 
-            <div class="card reveal">
-                <h3>Impacto económico</h3>
-                <p>
-                    Incremento del gasto en transporte privado
-                    debido a la falta de opciones seguras.
-                </p>
-            </div>
-
-            <div class="card reveal">
-                <h3>Impacto académico</h3>
-                <p>
-                    Abandono de clases y deserción de materias
-                    nocturnas por problemas de movilidad.
-                </p>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat reveal">
-                <h2>72%</h2>
-                <p>Percibe inseguridad nocturna</p>
-            </div>
-            <div class="stat reveal">
-                <h2>58%</h2>
-                <p>Espera más de 20 minutos</p>
-            </div>
-            <div class="stat reveal">
-                <h2>41%</h2>
-                <p>Ha faltado por movilidad</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="solucion">
-        <h2 class="section-title reveal">Solución</h2>
-        <p class="section-subtitle reveal">
-            El PIMN organiza la movilidad nocturna mediante
-            coordinación grupal y gestión estratégica del transporte.
-        </p>
-        <div class="grid grid-3">
-            <div class="card reveal">
-                <h3>1. Registro</h3>
-                <p>
-                    Los estudiantes se registran usando
-                    su correo institucional.
-                </p>
-            </div>
-            <div class="card reveal">
-                <h3>2. Coordinación</h3>
-                <p>
-                    El sistema organiza grupos según rutas,
-                    horarios y puntos de encuentro.
-                </p>
-            </div>
-            <div class="card reveal">
-                <h3>3. Movilidad Segura</h3>
-                <p>
-                    Se generan salidas grupales y convenios
-                    con transporte en horarios críticos.
-                </p>
+            <!-- STATS -->
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="72">0</div>
+                    <div class="stat-unit">%</div>
+                    <p>Percibe inseguridad nocturna al esperar transporte</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="58">0</div>
+                    <div class="stat-unit">%</div>
+                    <p>Espera más de 20 minutos al finalizar clases</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="60">0</div>
+                    <div class="stat-unit">%</div>
+                    <p>Se retira antes de terminar clase por falta de transporte</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-unit">%</div>
+                    <p>Ha dejado de matricular materias nocturnas por movilidad</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="funcionamiento">
+    <!-- SOLUCIÓN -->
+    <section id="solucion" class="section-dark">
+        <div class="container">
+            <span class="section-tag tag-light reveal">Propuesta</span>
+            <h2 class="section-title title-light reveal">Solución: PIMN</h2>
+            <p class="section-subtitle subtitle-light reveal">El sistema organiza la movilidad estudiantil nocturna
+                mediante dos pilares complementarios.</p>
 
-        <h2 class="section-title reveal">¿Cómo funciona?</h2>
-
-        <p class="section-subtitle reveal">
-            El sistema organiza y coordina la movilidad estudiantil
-            en horarios nocturnos mediante un flujo simple y seguro.
-        </p>
-
-        <div class="steps">
-
-            <div class="step reveal">
-                <span>1</span>
-                <h3>Registro</h3>
-                <p>El estudiante ingresa con su correo institucional.</p>
+            <div class="solution-pillars reveal">
+                <div class="pillar">
+                    <div class="pillar-number">01</div>
+                    <h3>Salidas grupales estructuradas</h3>
+                    <p>A partir de los datos recolectados, se establecen horarios y puntos de encuentro para coordinar
+                        salidas entre estudiantes que se dirigen a zonas similares (estaciones de metro, paraderos),
+                        reduciendo la exposición individual durante el desplazamiento.</p>
+                </div>
+                <div class="pillar-divider"></div>
+                <div class="pillar">
+                    <div class="pillar-number">02</div>
+                    <h3>Gestión de transporte en horarios críticos</h3>
+                    <p>Con base en los patrones identificados, se establecen convenios con servicios de transporte
+                        público o privado para cubrir las rutas y franjas horarias con mayor demanda y vulnerabilidad.
+                    </p>
+                </div>
             </div>
 
-            <div class="step reveal">
-                <span>2</span>
-                <h3>Selección de ruta</h3>
-                <p>El sistema identifica zonas y horarios similares.</p>
+            <div class="flow-steps reveal">
+                <h3 class="flow-title">¿Cómo funciona?</h3>
+                <div class="steps-row">
+                    <div class="flow-step">
+                        <div class="step-bubble">1</div>
+                        <h4>Registro</h4>
+                        <p>Con correo institucional</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-bubble">2</div>
+                        <h4>Selección de ruta</h4>
+                        <p>Zona y horario de salida</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-bubble">3</div>
+                        <h4>Agrupación</h4>
+                        <p>Punto de encuentro seguro</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-bubble">4</div>
+                        <h4>Movilidad segura</h4>
+                        <p>Desplazamiento acompañado</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="step reveal">
-                <span>3</span>
-                <h3>Agrupación</h3>
-                <p>Se coordinan salidas grupales y puntos seguros.</p>
-            </div>
-
-            <div class="step reveal">
-                <span>4</span>
-                <h3>Movilidad segura</h3>
-                <p>Los estudiantes se desplazan acompañados.</p>
-            </div>
-
         </div>
-
     </section>
 
+    <!-- ANÁLISIS DOFA + PESTEL -->
+    <section id="analisis" class="section-light">
+        <div class="container">
+            <span class="section-tag reveal">Análisis estratégico</span>
+            <h2 class="section-title reveal">Matriz DOFA</h2>
+            <p class="section-subtitle reveal">Evaluación del contexto interno y externo para determinar la viabilidad
+                estratégica del PIMN.</p>
+
+            <!-- DOFA -->
+            <div class="dofa-grid reveal">
+                <div class="dofa-label">Matriz DOFA</div>
+                <div class="dofa-card dofa-d">
+                    <div class="dofa-letter">D</div>
+                    <h4>Debilidades</h4>
+                    <p>Dependencia de la organización y participación activa de los estudiantes para su funcionamiento
+                        óptimo.</p>
+                </div>
+                <div class="dofa-card dofa-o">
+                    <div class="dofa-letter">O</div>
+                    <h4>Oportunidades</h4>
+                    <p>Posibilidad de establecer alianzas con servicios de transporte público o privado en la ciudad.
+                    </p>
+                </div>
+                <div class="dofa-card dofa-f">
+                    <div class="dofa-letter">F</div>
+                    <h4>Fortalezas</h4>
+                    <p>Respaldo institucional de la Universidad para coordinar y organizar el programa internamente.</p>
+                </div>
+                <div class="dofa-card dofa-a">
+                    <div class="dofa-letter">A</div>
+                    <h4>Amenazas</h4>
+                    <p>Condiciones de inseguridad persistentes en el entorno urbano en horarios nocturnos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RIESGOS -->
+    <section class="section-light" id="riesgos">
+        <div class="container">
+            <span class="section-tag reveal">Gestión</span>
+            <h2 class="section-title reveal">Matriz de riesgos</h2>
+            <p class="section-subtitle reveal">Cuatro riesgos identificados clasificados por impacto y probabilidad, con
+                estrategias de mitigación.</p>
+
+            <div class="risk-matrix reveal">
+                <div class="risk-axis-y">Probabilidad</div>
+                <div class="risk-axis-x">Impacto</div>
+                <div class="risk-grid">
+                    <div class="risk-header-row">
+                        <div></div>
+                        <div class="risk-col-label">Bajo impacto</div>
+                        <div class="risk-col-label">Alto impacto</div>
+                    </div>
+                    <div class="risk-row">
+                        <div class="risk-row-label">Alta<br>probabilidad</div>
+                        <div class="risk-cell risk-medium">
+                            <span class="risk-tag">Usuario</span>
+                            <p>Baja adopción en primeras semanas por desconfianza o desconocimiento.</p>
+                            <div class="risk-strategy">  Campañas de sensibilización desde el mes 1 y talleres de
+                                incorporación.</div>
+                        </div>
+                        <div class="risk-cell risk-high">
+                            <span class="risk-tag">Operativo</span>
+                            <p>Cancelación o incumplimiento por parte de un proveedor de transporte.</p>
+                            <div class="risk-strategy">  Convenios con al menos 2 proveedores desde el mes 1 con
+                                cláusulas de continuidad.</div>
+                        </div>
+                    </div>
+                    <div class="risk-row">
+                        <div class="risk-row-label">Baja<br>probabilidad</div>
+                        <div class="risk-cell risk-low">
+                            <span class="risk-tag">Técnico</span>
+                            <p>Caídas críticas en la plataforma por deficiencias en desarrollo o infraestructura.</p>
+                            <div class="risk-strategy">  Pruebas técnicas en mes 2 y soporte activo permanente.</div>
+                        </div>
+                        <div class="risk-cell risk-medium">
+                            <span class="risk-tag">Financiero</span>
+                            <p>Suspensión del financiamiento institucional por cambios presupuestales.</p>
+                            <div class="risk-strategy">  Formalizar aval y compromisos desde el mes 1 mediante acta
+                                firmada.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIABILIDAD / CRONOGRAMA -->
     <section id="viabilidad">
-        <h2 class="section-title reveal">Viabilidad del proyecto</h2>
-        <p class="section-subtitle reveal">
-            El proyecto contempla una implementación gradual
-            en seis meses con validación piloto y expansión institucional.
-        </p>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <h3>Mes 1 - Planeación</h3>
-                <p>Definición de alcance, equipo y arquitectura del sistema.</p>
-            </div>
+        <div class="container">
+            <span class="section-tag reveal">Implementación</span>
+            <h2 class="section-title reveal">Cronograma del proyecto</h2>
+            <p class="section-subtitle reveal">Implementación gradual en seis meses, desde la planeación hasta el cierre
+                con entrega de resultados.</p>
 
-            <div class="timeline-item reveal">
-                <h3>Mes 2 - Desarrollo</h3>
-                <p>Mapeo de rutas y desarrollo de plataforma básica.</p>
-            </div>
-
-            <div class="timeline-item reveal">
-                <h3>Mes 3 y 4 - Piloto</h3>
-                <p>Implementación piloto, pruebas y optimización.</p>
-            </div>
-
-            <div class="timeline-item reveal">
-                <h3>Mes 5 y 6 - Implementación</h3>
-                <p>Despliegue institucional y evaluación de resultados.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="inversion">
-
-        <h2 class="section-title reveal">Inversión estimada</h2>
-
-        <div class="stats">
-
-            <div class="stat reveal">
-                <h2>$20M</h2>
-                <p>Inversión total estimada</p>
-            </div>
-
-            <div class="stat reveal">
-                <h2>6</h2>
-                <p>Meses de implementación</p>
-            </div>
-
-            <div class="stat reveal">
-                <h2>2</h2>
-                <p>Proveedores estratégicos</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-        <h2 class="section-title reveal">Impacto esperado</h2>
-        <div class="grid grid-3">
-            <div class="card reveal">
-                <h3>Mayor seguridad</h3>
-                <p>Reducción de exposición individual nocturna.</p>
-            </div>
-
-            <div class="card reveal">
-                <h3>Menor deserción</h3>
-                <p>Mejores condiciones para la permanencia académica.</p>
-            </div>
-
-            <div class="card reveal">
-                <h3>Bienestar estudiantil</h3>
-                <p>Fortalecimiento de la responsabilidad social universitaria.</p>
+            <div class="timeline reveal">
+                <div class="tl-item">
+                    <div class="tl-dot">1</div>
+                    <div class="tl-content">
+                        <div class="tl-tag">Inicio y planeación</div>
+                        <h3>Mes 1</h3>
+                        <p>Definición del alcance geográfico, conformación del equipo con Bienestar Universitario y
+                            diseño de la arquitectura lógica para coordinar salidas grupales.</p>
+                        <div class="tl-deliverable">Acta de Inicio y definición de equipo</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot">2</div>
+                    <div class="tl-content">
+                        <div class="tl-tag">Planeación y desarrollo</div>
+                        <h3>Mes 2</h3>
+                        <p>Mapeo de rutas críticas y paraderos de mayor afluencia. Análisis de la demanda real.
+                            Desarrollo de la plataforma básica para registro de usuarios.</p>
+                        <div class="tl-deliverable">Mapa de rutas y prototipo de plataforma</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot">3</div>
+                    <div class="tl-content">
+                        <div class="tl-tag">Desarrollo y prueba piloto</div>
+                        <h3>Mes 3</h3>
+                        <p>Configuración de funcionalidades clave (registro vía correo institucional). Piloto controlado
+                            en zonas de mayor inseguridad. Coordinación con seguridad institucional.</p>
+                        <div class="tl-deliverable">Lanzamiento piloto con grupo de control</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot">4</div>
+                    <div class="tl-content">
+                        <div class="tl-tag">Ajustes</div>
+                        <h3>Mes 4</h3>
+                        <p>Recolección de feedback mediante encuestas. Ajuste del modelo logístico para optimizar
+                            tiempos de espera. Mejora de la interfaz según hallazgos.</p>
+                        <div class="tl-deliverable">Informe de ajustes y optimización del sistema</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot">5</div>
+                    <div class="tl-content">
+                        <div class="tl-tag">Implementación</div>
+                        <h3>Mes 5</h3>
+                        <p>Expansión a toda la comunidad nocturna. Formalización de convenios legales con al menos 2
+                            proveedores. Campañas de sensibilización masiva.</p>
+                        <div class="tl-deliverable">Firma de convenios y despliegue institucional total</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot">6</div>
+                    <div class="tl-content">
+                        <div class="tl-tag">Cierre</div>
+                        <h3>Mes 6</h3>
+                        <p>Evaluación de resultados frente a métricas de deserción y bienestar. Documentación final.
+                            Presentación a la Facultad de Ingenierías.</p>
+                        <div class="tl-deliverable">Informe final de impacto y cierre del proyecto</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="equipo">
-        <h2 class="section-title reveal">Equipo de trabajo</h2>
-        <div class="grid grid-3">
-            <div class="card team-card reveal">
-                <h3>Maria Kamila Mena Rojas</h3>
-                <p>Definición del problema, justificación de la necesidad y objetivos del proyecto.</p>
-                <a class="linkedin" href="https://www.linkedin.com/in/kamila-mena-40821140a" target="_blank">
-                    LinkedIn
-                </a>
+    <!-- INVERSIÓN -->
+    <section class="section-light" id="inversion">
+        <div class="container">
+            <span class="section-tag reveal">Finanzas</span>
+            <h2 class="section-title reveal">Plan de inversión</h2>
+            <p class="section-subtitle reveal">Estructura de costos para el desarrollo y validación del PMV en seis
+                meses, distribuida en seis categorías.</p>
+
+            <div class="investment-total reveal">
+                <div class="investment-amount">$20.000.000 COP</div>
+                <div class="investment-label">Inversión total estimada · 6 meses de PMV</div>
             </div>
 
-            <div class="card team-card reveal">
-                <h3>Edwarlin Yuliza Mosquera</h3>
-                <p>Evaluación de la factibilidad técnica y financiera usando matrices DOFA y PESTEL.</p>
-                <a class="linkedin" href="https://www.linkedin.com/in/edwarlin-yuliza-mosquera-mosquera-9b00a735a/"
-                    target="_blank">
-                    LinkedIn
-                </a>
-            </div>
-
-            <div class="card team-card reveal">
-                <h3>Cristián Camilo Saldarriaga</h3>
-                <p>Elaboración del cronograma de actividades y análisis los efectos del proyecto con el análisis de impacto.</p>
-                <a class="linkedin" href="https://www.linkedin.com/in/cristian-saldarriaga-75b755274/" target="_blank">
-                    LinkedIn
-                </a>
+            <div class="investment-grid reveal">
+                <div class="inv-item">
+                    <div class="inv-icon">👤</div>
+                    <div class="inv-info">
+                        <h4>Recursos humanos</h4>
+                        <p>1 coordinador operativo + 2 líderes de salida grupal</p>
+                    </div>
+                    <div class="inv-amount">$7.500.000</div>
+                    <div class="inv-bar">
+                        <div class="inv-fill" style="width:37.5%"></div>
+                    </div>
+                </div>
+                <div class="inv-item">
+                    <div class="inv-icon">📦</div>
+                    <div class="inv-info">
+                        <h4>Materiales</h4>
+                        <p>Señalización de 10 puntos de encuentro, papelería y pendones</p>
+                    </div>
+                    <div class="inv-amount">$500.000</div>
+                    <div class="inv-bar">
+                        <div class="inv-fill" style="width:2.5%"></div>
+                    </div>
+                </div>
+                <div class="inv-item">
+                    <div class="inv-icon">💻</div>
+                    <div class="inv-info">
+                        <h4>Equipos y tecnología</h4>
+                        <p>UI/UX, front-end PWA, back-end, hosting y pruebas de calidad</p>
+                    </div>
+                    <div class="inv-amount">$5.000.000</div>
+                    <div class="inv-bar">
+                        <div class="inv-fill" style="width:25%"></div>
+                    </div>
+                </div>
+                <div class="inv-item">
+                    <div class="inv-icon">🚌</div>
+                    <div class="inv-info">
+                        <h4>Servicios externos</h4>
+                        <p>Convenios con 2 operadores de transporte nocturno para rutas críticas</p>
+                    </div>
+                    <div class="inv-amount">$3.500.000</div>
+                    <div class="inv-bar">
+                        <div class="inv-fill" style="width:17.5%"></div>
+                    </div>
+                </div>
+                <div class="inv-item">
+                    <div class="inv-icon">📢</div>
+                    <div class="inv-info">
+                        <h4>Gastos administrativos</h4>
+                        <p>Marketing digital, campañas por correo institucional y gestión de convenios</p>
+                    </div>
+                    <div class="inv-amount">$1.500.000</div>
+                    <div class="inv-bar">
+                        <div class="inv-fill" style="width:7.5%"></div>
+                    </div>
+                </div>
+                <div class="inv-item">
+                    <div class="inv-icon">🛡️</div>
+                    <div class="inv-info">
+                        <h4>Contingencia (10%)</h4>
+                        <p>Reserva para imprevistos operativos o técnicos durante la ejecución</p>
+                    </div>
+                    <div class="inv-amount">$2.000.000</div>
+                    <div class="inv-bar">
+                        <div class="inv-fill" style="width:10%"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- IMPACTO -->
+    <section id="impacto">
+        <div class="container">
+            <span class="section-tag reveal">Resultados esperados</span>
+            <h2 class="section-title reveal">Impacto del proyecto</h2>
+            <p class="section-subtitle reveal">La implementación del PIMN impactaría directamente sobre la calidad de
+                vida estudiantil y el desempeño académico nocturno.</p>
+            <div class="grid grid-3">
+                <div class="card impact-card reveal">
+                    <h3>Mayor seguridad</h3>
+                    <p>Reducción de la exposición individual nocturna mediante el desplazamiento grupal coordinado.</p>
+                </div>
+                <div class="card impact-card reveal">
+                    <h3>Menor deserción</h3>
+                    <p>Mejores condiciones de movilidad que favorecen la permanencia en materias nocturnas.</p>
+                </div>
+                <div class="card impact-card reveal">
+                    <h3>Bienestar estudiantil</h3>
+                    <p>Fortalecimiento de la responsabilidad social universitaria de la Católica Luis Amigó.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVP -->
+    <section id="mvp" class="section-dark mvp-section">
+        <div class="container">
+            <span class="section-tag tag-light reveal">Producto</span>
+            <h2 class="section-title title-light reveal">Prototipo funcional (MVP)</h2>
+            <p class="section-subtitle subtitle-light reveal">Esta muestra tipo MVP funcional
+                permite explorar cómo funcionaría la plataforma digital del PIMN: registro de usuarios, búsqueda de
+                grupos por destino y horario, y visualización de rutas en tiempo real.</p>
+
+            <div class="mvp-card reveal">
+                <div class="mvp-features">
+                    <div class="mvp-feature">
+                        <span class="mvp-feat-icon">📍</span>
+                        <div>
+                            <strong>Búsqueda de ruta</strong>
+                            <p>Selección de destino y horario de salida para encontrar grupos disponibles</p>
+                        </div>
+                    </div>
+                    <div class="mvp-feature">
+                        <span class="mvp-feat-icon">🔐</span>
+                        <div>
+                            <strong>Registro institucional</strong>
+                            <p>Acceso exclusivo con correo institucional @amigo.edu.co</p>
+                        </div>
+                    </div>
+                    <div class="mvp-feature">
+                        <span class="mvp-feat-icon">👥</span>
+                        <div>
+                            <strong>Red en tiempo real</strong>
+                            <p>Visualización de viajes publicados por la comunidad Amigoniana</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mvp-cta">
+                    <div class="mvp-preview-label">Explorar el prototipo</div>
+                    <a href="https://pimn-86f33.web.app" target="_blank" class="btn-mvp">
+                        <span>Abrir MVP</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                    </a>
+                    <p class="mvp-disclaimer">Prototipo de demostración: No representa la versión final institucional y puede presentar errores
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section id="equipo" class="section-light">
+        <div class="container">
+            <span class="section-tag reveal">Equipo</span>
+            <h2 class="section-title reveal">Quiénes somos</h2>
+            <p class="section-subtitle reveal">Estudiantes de Ingeniería de la Universidad Católica Luis Amigó, Medellín
+                2026.</p>
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-avatar">KM</div>
+                    <h3>Maria Kamila Mena Rojas</h3>
+                    <div class="team-role">Definición del problema, justificación de la necesidad y objetivos del
+                        proyecto</div>
+                    <a class="linkedin" href="https://www.linkedin.com/in/kamila-mena-40821140a" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-avatar">EM</div>
+                    <h3>Edwarlin Yuliza Mosquera</h3>
+                    <div class="team-role">Evaluación de la factibilidad técnica y financiera usando matrices DOFA y
+                        PESTEL</div>
+                    <a class="linkedin" href="https://www.linkedin.com/in/edwarlin-yuliza-mosquera-mosquera-9b00a735a/"
+                        target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-avatar">CS</div>
+                    <h3>Cristián Camilo Saldarriaga</h3>
+                    <div class="team-role">Cronograma de actividades y análisis de impacto del proyecto</div>
+                    <a class="linkedin" href="https://www.linkedin.com/in/cristian-saldarriaga-75b755274/"
+                        target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="course-info reveal">
+                <p>Formulación y Evaluación de Proyectos</strong></p>
+                <p>Facultad de Ingenierías y Arquitectura · Universidad Católica Luis Amigó · 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <h2>PIMN</h2>
-        <p>
-            “Un estudiante que llega seguro, permanece.”
-        </p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="./assets/PIMN.png" alt="PIMN" class="footer-logo">
+                <div>
+                    <strong>PIMN</strong>
+                    <p>Programa Institucional de Movilidad Nocturna</p>
+                </div>
+            </div>
+            <blockquote class="footer-quote">Un estudiante que llega seguro, permanece.</blockquote>
+            <p class="footer-copy">Universidad Católica Luis Amigó · Medellín, Colombia · 2026</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
